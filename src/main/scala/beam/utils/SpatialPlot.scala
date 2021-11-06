@@ -68,7 +68,7 @@ class Plot(width: Int, height: Int, frame: Int) {
 
   var boundsCalculator = new BoundsCalculator
 
-  def setBoundsCalculator(boundsCalculator: BoundsCalculator) {
+  def setBoundsCalculator(boundsCalculator: BoundsCalculator) = {
     this.boundsCalculator = boundsCalculator
   }
 
@@ -110,9 +110,9 @@ class Plot(width: Int, height: Int, frame: Int) {
         graphics2d,
         new Point2D.Double(projectedStartCoord.getX, projectedStartCoord.getY),
         new Point2D.Double(projectedEndCoord.getX, projectedEndCoord.getY),
-        new BasicStroke(lineToPlot.stroke),
-        new BasicStroke(lineToPlot.stroke * 10),
-        lineToPlot.stroke * 10
+        new BasicStroke(lineToPlot.stroke.toFloat),
+        new BasicStroke((lineToPlot.stroke * 10).toFloat),
+        (lineToPlot.stroke * 10).toFloat
       )
 
     }
